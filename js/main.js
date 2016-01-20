@@ -25,8 +25,15 @@ app.factory('Backend', ['$http',
             self.orgs = data;
         });
         
-         Backend.projects().then(function(data) {
-                var projects = data.AllProjects;
+        Backend.featured().then(function(data) {
+            self.featured = data;
+
+            $.ajax({
+                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allprojects.json',
+                dataType: 'json',
+                // jsonpCallback: 'JSON_CALLBACK',
+                success: function(data) { 
+                    var projects = data.AllProjects;
                     $scope.currentPage = 1; //current page
                     $scope.maxSize = 5; //pagination max size
                     $scope.entryLimit = 36; //max rows for data table
@@ -43,6 +50,7 @@ app.factory('Backend', ['$http',
                         $scope.noOfPages = Math.ceil($scope.noOfRepos / $scope.entryLimit);
                         $scope.resultsSectionTitle = (!term) ? 'All Repos' : (($scope.noOfRepos == 0) ? 'Search results' : ($scope.noOfRepos + ' repositories found'));
                     });
+                    
                     var featuredProjects = new Array();
                     
                     self.featured.forEach(function (name) {
@@ -58,30 +66,13 @@ app.factory('Backend', ['$http',
                     self.projects = projects;
                     self.featuredProjects = featuredProjects;
                     $scope.$apply();
-            }).then(function(){
-                return Backend.featured();
-            }).then(function(data){
-                self.featured = data;
-                self.featuredProjects = new Array();
-                
-                self.featured.forEach(function (name) {
-                    for (var i = 0; i < self.projects.length; i++) {
-                        var project = self.projects[i];
-                        if (project.Name == name) {
-                            self.featuredProjects.push(project);
-                            return;
-                        }
-                    }
-                 });
+                }
             });
-        
-        Backend.featured().then(function(data) {
             $.ajax({
                 url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/projectssummary.jsoncallback',
                 dataType: 'jsonp',
                 jsonpCallback: 'JSON_CALLBACK',
                 success: function (stats) {
-                    alert(stats);
                     if (stats != null) {
                         $scope.overAllStats = stats[0];
                     }
