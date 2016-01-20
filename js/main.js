@@ -31,7 +31,6 @@ app.factory('Backend', ['$http',
             $.ajax({
                 url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allprojects.json',
                 dataType: 'json',
-                // jsonpCallback: 'JSON_CALLBACK',
                 success: function(data) { 
                     var projects = data.AllProjects;
                     $scope.currentPage = 1; //current page
@@ -70,8 +69,7 @@ app.factory('Backend', ['$http',
             });
             $.ajax({
                 url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/projectssummary.jsoncallback',
-                dataType: 'jsonp',
-                jsonpCallback: 'JSON_CALLBACK',
+                dataType: 'json',
                 success: function (stats) {
                     if (stats != null) {
                         $scope.overAllStats = stats[0];

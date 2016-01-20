@@ -1,3 +1,5 @@
 [
-	"vscode", "Office-UI-Fabric", "winjs"
+    "vscode",
+    "Office-UI-Fabric",
+    "winjs"
 ]
