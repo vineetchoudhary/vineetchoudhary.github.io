@@ -68,7 +68,7 @@ app.factory('Backend', ['$http',
                 }
             });
             $.ajax({
-                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/projectssummary.jsoncallback',
+                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/projectsummery.json',
                 dataType: 'json',
                 success: function (stats) {
                     if (stats != null) {
