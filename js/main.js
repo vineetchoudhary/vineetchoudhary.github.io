@@ -29,7 +29,7 @@ app.factory('Backend', ['$http',
             self.featured = data;
 
             $.ajax({
-                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allprojects.json',
+                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allproject.jsoncallback',
                 dataType: 'jsonp',
                 jsonpCallback: 'JSON_CALLBACK',
                 success: function(data) { 
@@ -69,7 +69,7 @@ app.factory('Backend', ['$http',
                 }
             });
             $.ajax({
-                url: 'https://popularrepostg.blob.core.windows.net/popularrepos/projectssummary.json',
+                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/projectssummary.jsoncallback',
                 dataType: 'jsonp',
                 jsonpCallback: 'JSON_CALLBACK',
                 success: function (stats) {
