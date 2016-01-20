@@ -11,9 +11,9 @@ angular
             };
 
             return {
-                featured: get('data/featured.json'),
-                projects: get('data/allprojects.json' /* 'https://popularrepostg.blob.core.windows.net/popularrepos/projects.json' 'https://api.github.com/orgs/microsoft/repos?per_page=100' */),
-                orgs: get('data/organization.json')
+                featured: get('https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/featured.json'),
+                projects: get('https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allprojects.json'),
+                orgs: get('https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/organization.json')
             }
         }
     ])
