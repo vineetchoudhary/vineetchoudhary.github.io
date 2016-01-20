@@ -72,7 +72,7 @@ app.factory('Backend', ['$http',
                 dataType: 'json',
                 success: function (stats) {
                     if (stats != null) {
-                        $scope.overAllStats = stats[0];
+                        $scope.overAllStats = stats;
                     }
                 }
             })
