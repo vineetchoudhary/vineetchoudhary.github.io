@@ -30,9 +30,10 @@ app.factory('Backend', ['$http',
 
             $.ajax({
                 url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allproject.jsoncallback',
-                dataType: 'json',
+                dataType: 'jsonp',
                 jsonpCallback: 'JSON_CALLBACK',
                 success: function(data) { 
+                    alert(data);
                     var projects = data[0].AllProjects;
                     $scope.currentPage = 1; //current page
                     $scope.maxSize = 5; //pagination max size
@@ -70,9 +71,10 @@ app.factory('Backend', ['$http',
             });
             $.ajax({
                 url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/projectssummary.jsoncallback',
-                dataType: 'json',
+                dataType: 'jsonp',
                 jsonpCallback: 'JSON_CALLBACK',
                 success: function (stats) {
+                    alert(stats);
                     if (stats != null) {
                         $scope.overAllStats = stats[0];
                     }
