@@ -29,9 +29,8 @@ app.factory('Backend', ['$http',
             self.featured = data;
 
             $.ajax({
-                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allproject.jsoncallback',
-                dataType: 'jsonp',
-                jsonpCallback: 'JSON_CALLBACK',
+                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allprojects.json',
+                dataType: 'json',
                 success: function(data) { 
                     var projects = data[0].AllProjects;
                     $scope.currentPage = 1; //current page
