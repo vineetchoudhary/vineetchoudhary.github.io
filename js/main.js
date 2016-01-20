@@ -29,8 +29,9 @@ app.factory('Backend', ['$http',
             self.featured = data;
 
             $.ajax({
-                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allprojects.json',
-                dataType: 'json',
+                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allproject.jsoncallback',
+                dataType: 'jsonp',
+                jsonpCallback: 'JSON_CALLBACK',
                 success: function(data) { 
                     var projects = data[0].AllProjects;
                     $scope.currentPage = 1; //current page
@@ -67,16 +68,16 @@ app.factory('Backend', ['$http',
                     $scope.$apply();
                 }
             });
-            $.ajax({
-                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/projectssummary.jsoncallback',
-                dataType: 'jsonp',
-                jsonpCallback: 'JSON_CALLBACK',
-                success: function (stats) {
-                    if (stats != null) {
-                        $scope.overAllStats = stats[0];
-                    }
-                }
-            })
+            // $.ajax({
+            //     url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/projectssummary.jsoncallback',
+            //     dataType: 'jsonp',
+            //     jsonpCallback: 'JSON_CALLBACK',
+            //     success: function (stats) {
+            //         if (stats != null) {
+            //             $scope.overAllStats = stats[0];
+            //         }
+            //     }
+            // })
         });
     }
 ])
