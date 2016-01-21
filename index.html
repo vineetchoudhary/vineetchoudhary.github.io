@@ -49,12 +49,12 @@
 															<span class="mscom-search-Border" id="ctl00_SearchBox">
 																<div class="mscom-search-Container">
 																	<input name="searchQuery"
-																		title="Search all Microsoft repos"
+																		title="Search all Repos..."
 																		class="mscom-search-TextBox"
 																		id="searchQuery"
 																		type="text"
 																		maxlength="1024"
-																		placeholder="Search all projects..."
+																		placeholder="Search all Repos..."
 																		style="max-width:100%!important"
 																		autocomplete="off"
 																		ng-model="searchText" />
@@ -99,7 +99,7 @@
 							<!-- Slide -->
 							<div class="carousel-inner">
 								<div class="item" ng-class="{'active': $index==0}" ng-repeat="project in main.featuredProjects">
-									<a ng-href="{{project.Url}}">
+									<a ng-href="{{project.Url}}" target="_blank">
 										<div class="panel panel-default clearfix center carousel-panel">
 											<div class="panel-heading">
 												<span class="panel-title">{{project.Name}}</span>
@@ -157,13 +157,13 @@
 							<div class="col-md-4 col-md-offset-0 col-xs-6 col-xs-offset-0" ng-repeat="project in filtered | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 								<div class="panel panel-default">
 									<div class="panel-heading">
-										<a ng-href="{{project.Url}}">
+										<a ng-href="{{project.Url}}" target="_blank">
 											<div class="panel-title-area">{{project.Name}}</div>
 										</a>
 									</div>
 									<div class="panel-body fork-info">
 										<span ng-if="project.Fork">
-											<span class="glyphicon glyphicon-random"></span>Forked from <a ng-href="{{project.ForkedFromUrl}}">{{project.ForkedFrom}}</a>
+											<span class="glyphicon glyphicon-random"></span>Forked from <a ng-href="{{project.ForkedFromUrl}}" target="_blank">{{project.ForkedFrom}}</a>
 										</span>
 									</div>
 									<div class="panel-body description"><span>{{project.Description}}</span></div>
@@ -187,13 +187,14 @@
 						<h3 class="orgs-heading">Other Accounts</h3>
 						<div class="row">
 							<div class="col-md-3 col-xs-6" ng-repeat="org in main.orgs">
-								<a ng-href="{{org.url}}" class="orglink">
-									<!-- <img ng-src="{{org.image}}" alt="{{org.image}}"> -->
+								<a ng-href="{{org.url}}" class="orglink" target="_blank">
+									<!--<img ng-src="{{org.image}}" alt="{{org.image}}">-->
 									<span class="text-center" ng-cloak>{{org.title}}</span>
 								</a>
 							</div>
 						</div>
 					</div>
+                    <br />
 				</div>
 			</div>
 		</div>
