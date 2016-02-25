@@ -11,9 +11,9 @@ app.factory('Backend', ['$http',
         };
 
         return {
-            featured: get('https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/featured.json'),
-            projects: get('https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allprojects.json'),
-            orgs: get('https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/organization.json')
+            featured: get('https://raw.githubusercontent.com/vineetchoudhary/vineetchoudhary.github.io/master/data/featured.json'),
+            projects: get('https://raw.githubusercontent.com/vineetchoudhary/vineetchoudhary.github.io/master/data/allprojects.json'),
+            orgs: get('https://raw.githubusercontent.com/vineetchoudhary/vineetchoudhary.github.io/master/data/organization.json')
         }
     }
 ])
@@ -29,7 +29,7 @@ app.factory('Backend', ['$http',
             self.featured = data;
 
             $.ajax({
-                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/allprojects.json',
+                url: 'https://raw.githubusercontent.com/vineetchoudhary/vineetchoudhary.github.io/master/data/allprojects.json',
                 dataType: 'json',
                 success: function(data) { 
                     var projects = data.AllProjects;
@@ -68,7 +68,7 @@ app.factory('Backend', ['$http',
                 }
             });
             $.ajax({
-                url: 'https://raw.githubusercontent.com/vineetchoudhary/VCPersonal/master/data/projectsummery.json',
+                url: 'https://raw.githubusercontent.com/vineetchoudhary/vineetchoudhary.github.io/master/data/projectsummery.json',
                 dataType: 'json',
                 success: function (stats) {
                     if (stats != null) {
