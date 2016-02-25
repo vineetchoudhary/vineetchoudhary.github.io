@@ -28,5 +28,17 @@
         "name": "BitBucjet",
         "url": "https://bitbucket.org/vineetchoudhary/",
         "image": null
+    },
+    {
+        "title": "iOS Hacks GitHub-Org",
+        "name": "iOS Hacks",
+        "url": "https://github.com/ioshacks/",
+        "image": null
+    },
+    {
+        "title": "iOS Notes GitHub-Org",
+        "name": "iOS Notes",
+        "url": "https://github.com/iosnotes/",
+        "image": null
     }
 ]
