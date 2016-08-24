@@ -5,7 +5,7 @@
       {
         "appID": "M8HBL5W4VV.com.Universal-Links",
         "paths": [
-          "*"
+          "/iOS-Universal-Links/*"
         ]
       }
     ]
